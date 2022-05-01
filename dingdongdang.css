@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0px;
+    padding: 0px 10px;
+    background-color: lightblue;
+    list-style-type: none;
+}
+
+.nav-item {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.nav-item a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item:hover {
+    background-color: lightgray;
+}
