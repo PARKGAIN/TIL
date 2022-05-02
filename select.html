@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	a { /*a 초기화*/
+		text-decoration: none; /*밑줄 없애기*/
+		color: black;
+		font-weight: bold;
+	}
+	
+	ul { /*ul초기화*/
+/* 		padding-left: 0px; 왼쪽여백 설정 */
+			padding: 0px;
+			overflow:hidden;
+			margin: 20px auto; /*가운데 정렬 반드시 width가 존재*/
+			display:table; /*width를 지정할 수 없을 때 사용 ☞table 태그와 같은 레이아웃 가짐*/
+/* 			width: 578px;*/ 
+	}
+	
+	li{ /*li초기화*/
+		list-style: none; /*li 앞에 글머리기호/숫자번호 없앰 */
+		float : left;
+	}
+	
+	
+/* 			padding :10px 15px;
+			border : 1px solid black; */
+	
+	
+	ul>li>a {
+			padding :10px 15px;
+			border : 1px solid black;
+			display: block;   /*다른 형식의 태그를 크기를 가질 수 있는 block 형식태그로 전환*/
+			margin-left: -1px;
+	}
+	
+	
+/* 	ul li:nth-child(2n+1) a */
+	ul li:nth-child(odd) a{
+		background-color: green;
+	}
+	
+/* 	ul li:nth-child(2n) a */
+	ul li:nth-child(even) a {
+		background-color: red;
+		
+/* 		border-left: none;
+		border-right: none; */
+	} 
+	
+	ul li:first-child a {
+		border-radius: 20px 0px 0px 20px;
+		margin-left: 1px;
+	}
+	
+	ul li:last-child a {
+		border-radius: 0px 20px 20px 0px;
+	}
+	
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="https://www.naver.com">네이버</a></li>
+		<li><a href="http://www.google.com">구글</a></li>
+		<li><a href="http://www.youtube.com">유튜브</a></li>
+		<li><a href="http://www.daum.net">다음</a></li>
+		<li><a href="http://news.naver.com">네이버뉴스</a></li>
+		<li><a href="http://www.facebook.com">페이스북</a></li>
+		<li><a href="http://www.twitter.com">트위터</a></li>
+	</ul>
+</body>
+</html>
