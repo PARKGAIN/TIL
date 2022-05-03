@@ -10,6 +10,13 @@ body {
     padding: 0px 10px;
     background-color: lightblue;
     list-style-type: none;
+    float: left;
+}
+
+.nav-container>li>a {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
 }
 
 .nav-item {
@@ -25,4 +32,19 @@ body {
 
 .nav-item:hover {
     background-color: lightgray;
+}
+
+div {
+    height: 500px;
+}
+
+header>div>img {
+    width: 100px;
+    height: 100px;
+}
+
+footer {
+    background-color: linear-gradient ( to right, gray, black);
+    border: 1px solid black;
+    height: 200px;
 }
