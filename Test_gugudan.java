@@ -14,11 +14,27 @@ public class Test_gugudan {
 			System.out.println();
 		}//for i
 		System.out.println();
-		int i =2, j = 1;
-		while (i) {
-			while(){
-				
-			}//while
-		}//while
+		int i =2;
+		while (i <= 9) {
+			int j= 1;
+			while(j <= 9){
+				System.out.print(i + "*" + j + "=" + (i*j)+ " ");
+				j++;
+			}//while j
+			i++;
+			System.out.println();	
+		}//while i
+		System.out.println();
+		
+		i = 1;
+		while (i <= 9) {
+			int j= 2;
+			while(j <= 9) {
+				System.out.println(j + "*" + i + "=" + (i*j)+ " ");
+				j++;
+			}//while j
+			i++;
+			System.out.println();
+		}//while i
 	}//main()
 }//class
