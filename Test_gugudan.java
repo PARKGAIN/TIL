@@ -36,5 +36,9 @@ public class Test_gugudan {
 			i++;
 			System.out.println();
 		}//while i
+int i = 2, j =1;
+do{
+syso()
+}while(i<10,j<10)
 	}//main()
 }//class
