@@ -45,7 +45,15 @@ public class Test_gugudan {
 			i++;
 			System.out.println();
 			} while(i < 10);
-		
+		System.out.println();
+		i = 1;
+		do {
+			for(int j = 2; j< 10; j++) {
+				System.out.print(j + "*" + i + "=" + (i*j)+ " ");
+			}//for
+			i++;
+			System.out.println();
+		} while (i < 10);
 	
 	}//main()
 }//class
