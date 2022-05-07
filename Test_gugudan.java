@@ -30,15 +30,22 @@ public class Test_gugudan {
 		while (i <= 9) {
 			int j= 2;
 			while(j <= 9) {
-				System.out.println(j + "*" + i + "=" + (i*j)+ " ");
+				System.out.print(j + "*" + i + "=" + (i*j)+ " ");
 				j++;
 			}//while j
 			i++;
 			System.out.println();
 		}//while i
-int i = 2, j =1;
-do{
-syso()
-}while(i<10,j<10)
+		System.out.println();
+		i =2;
+		do {
+			for(int j= 1; j < 10; j++) {
+				System.out.print(i+ "*"+ j + "="+ (i*j)+" ");
+				}//for
+			i++;
+			System.out.println();
+			} while(i < 10);
+		
+	
 	}//main()
 }//class
