@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        ul {
+            padding: 0px;
+        }
+        
+        li {
+            list-style: none;
+            font-size: 25px;
+        }
+        
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: orange;
+        }
+        
+        #mainMenu {
+            overflow: hidden;
+            display: table;
+            margin: 30px auto;
+        }
+        
+        #mainMenu>li {
+            float: left;
+            text-align: center;
+        }
+        
+        #mainMenu li {
+            background-color: black;
+        }
+        
+        .subMenu {
+            display: none;
+            text-align: center;
+        }
+        
+        #mainMenu>li>a:hover+.subMenu {
+            /*이코드 잘 봐두기 */
+            display: block;
+        }
+        
+        .subMenu:hover {
+            display: block;
+        }
+        
+        .subMenu>li>a:active {
+            color: yellow;
+        }
+        
+        .subMenu li>a:hover {
+            background-color: white;
+        }
+        
+        .subMenu li>a {
+            padding: 0px 30px;
+        }
+        
+        #mainMenu>li>a {
+            padding: 10px 30px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="mainMenu">
+        <li><a href="#">홈</a>
+            <ul class="subMenu">
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">시설안내</a>
+            <ul class="subMenu">
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">스터디존</a>
+            <ul class="subMenu">
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+            </ul>
+        </li>
+        <li><a href="#">수험생</a>
+            <ul class="subMenu">
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>
