@@ -12,11 +12,11 @@ public class Question01Main {
 		q.getArea(radius);
 		System.out.println("원의 넓이 : " + q.getArea(radius));
 		
-		System.out.println("Question02");
-		q.getRadius(5);
-		System.out.println("반지름 : "+  q.getRadius(5));
-		q.getArea(5);
-		System.out.println("원의 넓이 : " + q.getArea(5));
+		Question02 q2 = new Question02();
+		q2.getRadius();
+		System.out.println("반지름 : "+  q2.getRadius());
+		q2.getArea();
+		System.out.println("원의 넓이 : " + q2.getArea());
 		
 		scanner.close();
 	}//main()
