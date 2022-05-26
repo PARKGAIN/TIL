@@ -17,5 +17,7 @@ public class Question01Main {
 		System.out.println("반지름 : "+  q.getRadius(5));
 		q.getArea(5);
 		System.out.println("원의 넓이 : " + q.getArea(5));
+		
+		
 	}//main()
 }//class
