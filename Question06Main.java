@@ -13,6 +13,7 @@ public class Question06Main {
 		int arr2 =Integer.parseInt(arr[i]);
 		sum += arr2;
 		}//for
+		scanner.close();
 		System.out.println(sum);
 	}//main()
 }//class
