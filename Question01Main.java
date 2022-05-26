@@ -18,6 +18,6 @@ public class Question01Main {
 		q.getArea(5);
 		System.out.println("원의 넓이 : " + q.getArea(5));
 		
-		
+		scanner.close();
 	}//main()
 }//class
