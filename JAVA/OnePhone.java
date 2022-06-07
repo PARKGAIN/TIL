@@ -22,9 +22,9 @@ public class OnePhone {
 		Scanner scanner = new Scanner(System.in);
 		printInfo();
 		
+		System.out.println("전원을 켜시겠습니까?");
+		System.out.println("1.네\t2.아니요");
 		do {		
-			System.out.println("전원을 켜시겠습니까?");
-			System.out.println("1.네\t2.아니요");
 		int menu = Integer.parseInt(scanner.nextLine());
 			
 			if(menu == 1) {
@@ -60,12 +60,11 @@ public class OnePhone {
 	
 	//전원이 켜졌을 때 
 	public void powerOn(Scanner scanner) {
-		System.out.println("전원이 켜졌습니다.");
+		System.out.println(model+ "전원이 켜졌습니다.");
 		menuBar();
 		int menubar = Integer.parseInt(scanner.nextLine());
 		if(menubar == 1) {
-			System.out.println("전화가 와서 전화를 받았습니다.\n나 : 여보세요?\n상대방 : 여보세요?");
-
+			receive(scanner);
 		}else if(menubar == 2) {
 			System.out.println("전화를 끊습니다");
 		}else if(menubar == 3) {
@@ -92,17 +91,15 @@ public class OnePhone {
 			System.out.println("다시 입력하세요");
 		}//if
 	}//powerOff()
-		
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	//전화 받기
+	public void receive(Scanner scanner) {
+		System.out.println("전화가 와서 전화를 받았습니다. 하고싶은 말을 입력해주세요");
+		String p1 = scanner.nextLine();
+		System.out.println(p1);
+		String p2 = scanner.nextLine();
+		System.out.println(p2);
+		System.out.println("전화 끊기");
+	}//receive()
 	
 }//class
