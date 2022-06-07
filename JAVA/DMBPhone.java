@@ -18,7 +18,7 @@ public class DMBPhone extends OnePhone{
 	@Override
 	public void menuBar() {
 		System.out.println("===================================================================================");
-		System.out.println("1.전화받기\t2.전화끊기\t3.음성메세지 수신&송신\t4.DMB방송켜기&채널변경&끄기");
+		System.out.println("1.전화받기\t2.전화끊기\t3.음성메세지 수신&송신\t4.DMB방송켜기");
 		System.out.println("===================================================================================");
 	}
 
@@ -28,7 +28,7 @@ public class DMBPhone extends OnePhone{
 		menuBar();
 		int menubar = Integer.parseInt(scanner.nextLine());
 		if(menubar == 1) {
-			System.out.println("전화가 와서 전화를 받았습니다.\n나 : 여보세요?\n상대방 : 여보세요?");
+			receive(scanner);
 		}else if(menubar == 2) {
 			System.out.println("전화를 끊습니다");
 		}else if(menubar == 3) {
