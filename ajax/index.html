@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            background-color: #8e7da5;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            margin-top: 30px;
+            margin-right: 70px;
+        }
+
+        .flex-container__button {
+            font-size: 20px;
+            border: 2px solid darkgray;
+            border-radius: 20px;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+        .flex-container__button:hover {
+            border: 2px solid white;
+        }
+        .footer {
+            text-align:center;
+        }
+
+        .footer__img {
+            width: 150px;
+            height: 100px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+        .img_container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .img_container__img {
+            
+            width: 500px;
+            height: auto;
+        }
+    </style>
+    <title>메인 화면</title>
+</head>
+<body>
+    <header>
+        <div class="flex-container">
+            <input class="flex-container__button" type="button" value="sign in" onclick="window.open('signin.html')">
+            <input class="flex-container__button" type="button" value="sign up" onclick="window.open('signup.html')">
+        </div>
+    </header>
+    <div class="img_container">
+        <img src="link.jpg" class="img_container__img" />
+    </div>
+
+    <div class="footer">
+        <img class="footer__img" src="link2.png" alt="instagram image" />
+        <img class="footer__img" src="link3.png" alt="youtube image" />
+        <img class="footer__img" src="link4.jpg" alt="google drive" />
+        <img class="footer__img" src="link5.png" alt="naver logo" />
+    </div>
+   
+</body>
+</html>

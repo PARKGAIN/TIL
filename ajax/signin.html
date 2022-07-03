@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@100&family=Nanum+Gothic&family=Noto+Sans+KR:wght@700&family=Signika:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .sign_in {
+            font-family: 'Signika', sans-serif;
+            font-size: 50px;
+            text-align:center;
+            margin-top:20px;
+        }
+        form {
+            text-align:center;
+        }
+        label {
+            font-family: 'Lato', sans-serif;
+            font-size: 30px;
+        }
+        .id_container {
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+
+        .id_container__input {
+            border: 1px solid gray;
+            font-size: 30px;
+            font-family: 'Lato','Nanum Gothic', sans-serif;
+            padding: 10px;
+        }
+            .id_container__input:focus {
+                border: 1px solid purple;
+            }
+        .pw_container__input {
+            border: 1px solid gray;
+            font-size: 30px;
+            font-family: 'Lato','Nanum Gothic', sans-serif;
+            padding: 10px;
+        }
+            .pw_container__input:focus {
+                border: 1px solid purple;
+            }
+        .form__submit_btn {
+            padding: 10px 30px;
+            margin-top: 40px;
+            cursor: pointer;
+            font-family: 'Nanum Gothic', sans-serif;
+            border-radius : 5px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+ 
+            function loginCheck() {
+                var id = document.getElementById('id');
+                if (id.value.length == 0) {
+                    alert("아이디를 입력해주세요!");
+                }
+
+        }
+            function passCheck() {
+                var pw = document.getElementById('pw');
+                if (pw.value.length == 0) {
+                    alert("비밀번호를 입력해주세요!");
+                }
+
+                $(document).ready(function () {
+                    $("#start_ajax").click(function () {
+
+                        $.ajax({
+
+                            url: "loginCheck.json",
+
+                            success: function (result) {
+                                $(result).each(function (key, value) {
+
+                                    $("body").append("<h1>" + "<br />" + value.id + " : " + value.pw + " : " + value.email + "</h1>");
+                                });//each
+
+                            }//success
+
+                        }); //ajax
+
+                    }); //start_ajax clcik
+                }); //ready
+            }
+    </script>
+    <title></title>
+</head>
+    <body>
+       <div class="sign_in">sign in
+        <img src="" alt=""/>
+        </div>
+
+       <form >
+           <div class="id_container">
+               <label for="id">ID : &nbsp; </label>
+               <input name="id" id="id" class="id_container__input" type="text" placeholder="아이디를 입력 해주세요" />
+           </div>
+           <div class="pw_container">
+           <label for="">PW : </label>
+           <input name="pw" id="pw" class="pw_container__input" type="password" placeholder="비밀번호를 입력해주세요" />
+           </div>
+               <input type="submit" class="form__submit_btn" id="submit_btn" value="로그인" onclick="loginCheck(), passCheck();"/>
+       </form>
+  
+    </body>
+</html>

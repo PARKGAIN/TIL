@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@100&family=Nanum+Gothic&family=Noto+Sans+KR:wght@700&family=Signika:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: 0px;
+            font-size: 20px;
+        }
+
+        .sign_up {
+            font-size: 40px;
+            text-align: center;
+            font-family: 'Signika', sans-serif;
+            margin: 30px 0px;
+        }
+        form {
+            text-align: center;
+        }
+        .form__submit-btn, .form__reset-btn, .form__form-btn{
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+    </style>
+    <title>회원가입</title>
+</head>
+<body>
+  <div class="sign_up">sign up</div>
+    <form>
+        <table>
+            <tr>
+                <td> <label for="name">이름 : </label> </td>
+                <td> <input id="name" name="name" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label>ID : </label></td>
+                <td>  <input type="text" id="id" name="id" class="id" /></td>
+                <td> <input class="form__form-btn" type="button" value="중복확인" /></td>
+            </tr>
+            <tr>
+                <td> <label for="pw">비밀번호 : </label></td>
+                <td>  <input type="text" id="pw" name="pw" class="pw" /></td>
+            </tr>
+            <tr>
+                <td><label for="pw_check">비밀번호 확인 : </label></td>
+                <td>  <input type="text" id="pw_check" name="pw_check" /></td>
+            </tr>
+            <tr>
+                <td> <label for="email">이메일 : </label></td>
+                <td> <input type="email" id="email" name="email" /></td>
+            </tr>
+            <tr>
+                <td> <label for="tel">전화번호 : </label></td>
+                <td><input type="tel" id="tel" name="tel" /></td>
+            </tr>
+        </table>
+     <input class="form__submit-btn" type="submit" value="회원가입"/> 
+    <input class="form__reset-btn" type="reset" value="취소" />
+    </form>
+</body>
+</html>
