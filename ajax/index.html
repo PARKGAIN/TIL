@@ -34,6 +34,7 @@
         }
         .footer {
             text-align:center;
+            margin-top: 150px;
         }
 
         .footer__img {
@@ -51,6 +52,89 @@
             width: 500px;
             height: auto;
         }
+        <!-- 이미지 슬라이더-- >
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        [name="slide"] {
+            display: none;
+        }
+
+        .slidebox {
+            width: 800px;
+            height: 400px;
+            margin: 0px auto;
+        }
+
+            .slidebox img {
+                max-width: 100%;
+            }
+
+            .slidebox .slidelist {
+                white-space: nowrap;
+                font-size: 0;
+                overflow: hidden;
+            }
+
+            .slidebox .slideitem {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                transition: all .5s;
+            }
+
+                .slidebox .slideitem label {
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    padding: 20px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+        label.left {
+            left: 20px;
+            background-color: lightgray;
+            background-position: center center;
+            background-size: 50%;
+            background-repeat: no-repeat;
+        }
+
+        label.right {
+            right: 20px;
+            background-color: lightgray;
+            background-position: center center;
+            background-size: 50%;
+            background-repeat: no-repeat;
+        }
+        .slidebox .slidelist .left {
+            left: 30px;
+            background:url('img2.png') center center / 100% no-repeat;
+        }
+        .slidebox .slidelist .right {
+            right: 30px;
+            background: url('img.png') center center / 100% no-repeat;
+        }
+        [id="slide01"]:checked ~ .slidelist .slideitem {
+            transform: translateX(0);
+        }
+
+        [id="slide02"]:checked ~ .slidelist .slideitem {
+            transform: translateX(-100%);
+        }
+
+        [id="slide03"]:checked ~ .slidelist .slideitem {
+            transform: translateX(-200%);
+        }
+
+        [id="slide04"]:checked ~ .slidelist .slideitem {
+            transform: translateX(-300%);
+        }
     </style>
     <title>메인 화면</title>
 </head>
@@ -61,16 +145,49 @@
             <input class="flex-container__button" type="button" value="sign up" onclick="window.open('signup.html')">
         </div>
     </header>
-    <div class="img_container">
-        <img src="link.jpg" class="img_container__img" />
+  
+    <div class="slidebox">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <input type="radio" name="slide" id="slide04">
+        <ul class="slidelist">
+            <li class="slideitem">
+                <div>
+                    <label for="slide04" class="left"></label>
+                    <label for="slide02" class="right"></label>
+                    <a><img src="mainimg.jpg"></a>
+                </div>
+            </li>
+            <li class="slideitem">
+                <div>
+                    <label for="slide01" class="left"></label>
+                    <label for="slide03" class="right"></label>
+                    <a><img src="second.jpg"></a>
+                </div>
+            </li>
+            <li class="slideitem">
+                <div>
+                    <label for="slide02" class="left"></label>
+                    <label for="slide04" class="right"></label>
+                    <a><img src="third.jpg"></a>
+                </div>
+            </li>
+            <li class="slideitem">
+                <div>
+                    <label for="slide03" class="left"></label>
+                    <label for="slide01" class="right"></label>
+                    <a><img src="four.jpg"></a>
+                </div>
+            </li>
+        </ul>
     </div>
-
     <div class="footer">
         <img class="footer__img" src="link2.png" alt="instagram image" />
         <img class="footer__img" src="link3.png" alt="youtube image" />
         <img class="footer__img" src="link4.jpg" alt="google drive" />
         <img class="footer__img" src="link5.png" alt="naver logo" />
     </div>
-   
+
 </body>
 </html>
