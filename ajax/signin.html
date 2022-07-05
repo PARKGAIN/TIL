@@ -12,19 +12,23 @@
             margin: 0px;
             box-sizing: border-box;
         }
+
         .sign_in {
             font-family: 'Signika', sans-serif;
             font-size: 50px;
-            text-align:center;
-            margin-top:20px;
+            text-align: center;
+            margin-top: 20px;
         }
+
         form {
-            text-align:center;
+            text-align: center;
         }
+
         label {
             font-family: 'Lato', sans-serif;
             font-size: 30px;
         }
+
         .id_container {
             margin-top: 80px;
             margin-bottom: 20px;
@@ -36,13 +40,12 @@
             font-family: 'Lato','Nanum Gothic', sans-serif;
             padding: 10px 20px;
         }
-    
+
         .pw_container__input {
             border: 1px solid gray;
             font-size: 30px;
             font-family: 'Lato','Nanum Gothic', sans-serif;
             padding: 10px 20px;
-            
         }
 
         .form__submit_btn {
@@ -50,72 +53,73 @@
             margin-top: 40px;
             cursor: pointer;
             font-family: 'Nanum Gothic', sans-serif;
-            border-radius : 5px;
+            border-radius: 5px;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
- 
-            function loginCheck() {
-                var id = document.getElementById('id');
-                if (id.value.length == 0) {
-                    alert("아이디를 입력해주세요!");
-                }
+
+        function loginCheck() {
+            var id = document.getElementById('id');
+            if (id.value.length == 0) {
+                alert("아이디를 입력해주세요!");
+            }
 
         }
-            function passCheck() {
-                var pw = document.getElementById('pw');
-                if (pw.value.length == 0) {
-                    alert("비밀번호를 입력해주세요!");
-                }
-
-                $(document).ready(function () {
-                    $("#submit_btn").click(function () {
-
-                        $.ajax({
-
-                            url: "loginCheck.json",
-
-                            success: function (result) {
-                                $(result).each(function (key, value) {
-
-                                   if(value.id == $("#id").val()||value.pw == $("#pw").val()){
-                                	   alert("로그인 되었습니다!");
-                                	   location.href="index.html"; 
-                                	 	return false;  
-                                   }else{
-                                	   alert("아이디가 일치하지 않거나 비밀번호가 틀립니다.");
-                                   }
-                                   
-                                });//each
-													
-
-                            }//success
-
-                        }); //ajax
-
-                    }); //start_ajax clcik
-                }); //ready
+        function passCheck() {
+            var pw = document.getElementById('pw');
+            if (pw.value.length == 0) {
+                alert("비밀번호를 입력해주세요!");
             }
+
+            $(document).ready(function () {
+                $("#submit_btn").click(function () {
+
+                    $.ajax({
+
+                        url: "loginCheck.json",
+
+                        success: function (result) {
+                            $(result).each(function (key, value) {
+
+                                if (value.id == $("#id").val() || value.pw == $("#pw").val()) {
+                                    alert("로그인 되었습니다!");
+                                    location.href = "index.html";
+                                    return false;
+                                } else {
+                                    alert("아이디가 일치하지 않거나 비밀번호가 틀립니다.");
+                                }
+
+                            });//each
+
+
+                        }//success
+
+                    }); //ajax
+
+                }); //start_ajax clcik
+            }); //ready
+        }
     </script>
     <title></title>
 </head>
-    <body>
-       <div class="sign_in">sign in
-        <img src="" alt=""/>
-        </div>
+<body>
+    <div class="sign_in">
+        sign in
+        <img src="" alt="" />
+    </div>
 
-       <form >
-           <div class="id_container">
-               <label for="id">ID : &nbsp; </label>
-               <input name="id" id="id" class="id_container__input" type="text" placeholder="아이디를 입력 해주세요" />
-           </div>
-           <div class="pw_container">
-           <label for="">PW : </label>
-           <input name="pw" id="pw" class="pw_container__input" type="password" placeholder="비밀번호를 입력해주세요" />
-           </div>
-               <input type="button" class="form__submit_btn" id="submit_btn" value="로그인" onclick="loginCheck(),passCheck();"/>
-       </form>
-  
-    </body>
+    <form>
+        <div class="id_container">
+            <label for="id">ID : &nbsp; </label>
+            <input name="id" id="id" class="id_container__input" type="text" placeholder="아이디를 입력 해주세요" />
+        </div>
+        <div class="pw_container">
+            <label for="">PW : </label>
+            <input name="pw" id="pw" class="pw_container__input" type="password" placeholder="비밀번호를 입력해주세요" />
+        </div>
+        <input type="button" class="form__submit_btn" id="submit_btn" value="로그인" onclick="loginCheck(),passCheck();" />
+    </form>
+
+</body>
 </html>
