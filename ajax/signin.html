@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -34,20 +34,17 @@
             border: 1px solid gray;
             font-size: 30px;
             font-family: 'Lato','Nanum Gothic', sans-serif;
-            padding: 10px;
+            padding: 10px 20px;
         }
-            .id_container__input:focus {
-                border: 1px solid purple;
-            }
+    
         .pw_container__input {
             border: 1px solid gray;
             font-size: 30px;
             font-family: 'Lato','Nanum Gothic', sans-serif;
-            padding: 10px;
+            padding: 10px 20px;
+            
         }
-            .pw_container__input:focus {
-                border: 1px solid purple;
-            }
+
         .form__submit_btn {
             padding: 10px 30px;
             margin-top: 40px;
@@ -73,7 +70,7 @@
                 }
 
                 $(document).ready(function () {
-                    $("#start_ajax").click(function () {
+                    $("#submit_btn").click(function () {
 
                         $.ajax({
 
@@ -82,8 +79,16 @@
                             success: function (result) {
                                 $(result).each(function (key, value) {
 
-                                    $("body").append("<h1>" + "<br />" + value.id + " : " + value.pw + " : " + value.email + "</h1>");
+                                   if(value.id == $("#id").val()||value.pw == $("#pw").val()){
+                                	   alert("로그인 되었습니다!");
+                                	   location.href="index.html"; 
+                                	 	return false;  
+                                   }else{
+                                	   alert("아이디가 일치하지 않거나 비밀번호가 틀립니다.");
+                                   }
+                                   
                                 });//each
+													
 
                             }//success
 
@@ -109,7 +114,7 @@
            <label for="">PW : </label>
            <input name="pw" id="pw" class="pw_container__input" type="password" placeholder="비밀번호를 입력해주세요" />
            </div>
-               <input type="submit" class="form__submit_btn" id="submit_btn" value="로그인" onclick="loginCheck(), passCheck();"/>
+               <input type="button" class="form__submit_btn" id="submit_btn" value="로그인" onclick="loginCheck(),passCheck();"/>
        </form>
   
     </body>
