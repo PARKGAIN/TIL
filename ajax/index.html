@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -29,11 +29,13 @@
             color: white;
             font-family: 'Lato', sans-serif;
         }
-        .flex-container__button:hover {
-            border: 2px solid white;
-        }
+
+            .flex-container__button:hover {
+                border: 2px solid white;
+            }
+
         .footer {
-            text-align:center;
+            text-align: center;
             margin-top: 150px;
         }
 
@@ -43,12 +45,13 @@
             margin-top: 30px;
             cursor: pointer;
         }
+
         .img_container {
             text-align: center;
             margin-top: 50px;
         }
+
         .img_container__img {
-            
             width: 500px;
             height: auto;
         }
@@ -112,14 +115,17 @@
             background-size: 50%;
             background-repeat: no-repeat;
         }
+
         .slidebox .slidelist .left {
             left: 30px;
-            background:url('img2.png') center center / 100% no-repeat;
+            background: url('img2.png') center center / 100% no-repeat;
         }
+
         .slidebox .slidelist .right {
             right: 30px;
             background: url('img.png') center center / 100% no-repeat;
         }
+
         [id="slide01"]:checked ~ .slidelist .slideitem {
             transform: translateX(0);
         }
@@ -145,7 +151,7 @@
             <input class="flex-container__button" type="button" value="sign up" onclick="window.open('signup.html')">
         </div>
     </header>
-  
+
     <div class="slidebox">
         <input type="radio" name="slide" id="slide01" checked>
         <input type="radio" name="slide" id="slide02">
