@@ -29,12 +29,20 @@
         .form__submit-btn, .form__reset-btn, .form__form-btn {
             cursor: pointer;
             padding: 5px 10px;
+            background-color:cornflowerblue;
+            border: 1px solid white;
+            color:white;
+        }
+        .form__reset-btn {
+            margin-left: 20px;
         }
 
         .form__submit-btn, .form__reset-btn {
             margin-top: 30px;
         }
-
+        .form__form-btn {
+            margin-left: 10px;
+        }
         table {
             margin-left: auto;
             margin-right: auto; /* 테이블 가운데 정렬하는 코드 */
@@ -48,7 +56,6 @@
             const nametext = document.getElementById('name-text');
             if (name.value.length == 0) {
                 nametext.append("이름을 입력해주세요!");
-                //null값 넣어줘야함
             }
         }
 
@@ -73,6 +80,16 @@
             }
         }
 
+        function signUp() {
+            const name = document.getElementById('name');
+            const id = document.getElementById('id');
+            const pw = document.getElementById('pw');
+            if (id.value.length != 0 && pw.value.length != 0 && name.value.length != 0) {
+                alert("회원가입을 축하합니다!");
+                history.go(0);
+            }
+        }
+
 
         $(document).ready(function () {
             $("#id_btn").click(function () {
@@ -87,21 +104,25 @@
                             if (value.id == id.value) {
                                 alert("아이디 값이 이미 존재합니다.");
                                 id.value = "";
-                            } else {
+                                return false;
+                            }else{
                                 alert("사용할 수 있는 아이디입니다.");
+                                return true;
                             }
+                                
+                            })
 
-                        });//each
+                        }//each
 
 
-                    }//success
+                    })//success
 
                 }); //ajax
 
             }); // clcik
             
 
-        }); //ready
+        ; //ready
     </script>
     <title>회원가입</title>
 
@@ -109,21 +130,22 @@
 <body>
     <div class="sign_up">sign up</div>
     <form>
+        <p>*는 필수입력사항입니다.</p>
         <table>
             <tr>
-                <td> <label for="name">이름 : </label> </td>
-                <td> <input id="name" name="name" type="text" /></td>
+                <td> <label for="name">*이름 : </label> </td>
+                <td> <input id="name" name="name" type="text" required /></td>
                 <h4 id="name-text"></h4>
             </tr>
             <tr>
-                <td><label>ID : </label></td>
+                <td><label>*ID : </label></td>
                 <td>  <input type="text" id="id" name="id" class="id" /></td>
                 <h4 id="id-text"></h4>
-                <td> <input class="form__form-btn" id="id_btn" type="button" value="중복확인" /></td>
+                <td> <input class="form__form-btn" id="id_btn" type="button" value="중복확인"  required/></td>
             </tr>
             <tr>
-                <td> <label for="pw">비밀번호 : </label></td>
-                <td>  <input type="password" id="pw" name="pw" class="pw" /></td>
+                <td> <label for="pw">*비밀번호 : </label></td>
+                <td>  <input type="password" id="pw" name="pw" class="pw" required /></td>
             </tr>
             <tr>
                 <td><label for="pw_check">비밀번호 확인 : &nbsp;</label></td>
@@ -139,7 +161,7 @@
                 <td><input type="tel" id="tel" name="tel" /></td>
             </tr>
         </table>
-        <input class="form__submit-btn" type="button" id="submit_btn" value="회원가입" onclick="nameCheck(), idCheck(),pwCheck();"/>
+        <input class="form__submit-btn" type="button" id="submit_btn" value="회원가입" onclick="nameCheck(), idCheck(),pwCheck(),signUp();"/>
         <input class="form__reset-btn" type="reset" value="취소" />
     </form>
 </body>
