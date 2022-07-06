@@ -27,6 +27,7 @@
         label {
             font-family: 'Lato', sans-serif;
             font-size: 30px;
+            font-weight: bold;
         }
 
         .id_container {
@@ -39,6 +40,7 @@
             font-size: 30px;
             font-family: 'Lato','Nanum Gothic', sans-serif;
             padding: 10px 20px;
+            border-radius: 10px;
         }
 
         .pw_container__input {
@@ -46,6 +48,7 @@
             font-size: 30px;
             font-family: 'Lato','Nanum Gothic', sans-serif;
             padding: 10px 20px;
+            border-radius: 10px;
         }
 
         .form__submit_btn {
@@ -54,6 +57,14 @@
             cursor: pointer;
             font-family: 'Nanum Gothic', sans-serif;
             border-radius: 5px;
+            background-color: cornflowerblue;
+            font-size: 20px;
+            color:white;
+            border: 1px solid white;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto; /* 테이블 가운데 정렬하는 코드 */
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -110,14 +121,20 @@
     </div>
 
     <form>
-        <div class="id_container">
-            <label for="id">ID : &nbsp; </label>
-            <input name="id" id="id" class="id_container__input" type="text" placeholder="아이디를 입력 해주세요" />
-        </div>
-        <div class="pw_container">
-            <label for="">PW : </label>
-            <input name="pw" id="pw" class="pw_container__input" type="password" placeholder="비밀번호를 입력해주세요" />
-        </div>
+        <table>
+            <tr>
+                <div class="id_container">
+                <td> <label for="id">ID : </label></td>
+                <td><input name="id" id="id" class="id_container__input" type="text" placeholder="아이디를 입력 해주세요" /></td>
+                    </div>
+            </tr>
+            <tr>
+                <div class="pw_container">
+                <td> <label for="">PW : </label></td>
+                <td><input name="pw" id="pw" class="pw_container__input" type="password" placeholder="비밀번호를 입력해주세요" /></td>
+                </div>
+            </tr>
+        </table>
         <input type="button" class="form__submit_btn" id="submit_btn" value="로그인" onclick="loginCheck(),passCheck();" />
     </form>
 
