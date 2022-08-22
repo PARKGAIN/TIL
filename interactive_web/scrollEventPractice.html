@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollEvent</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <img id="widthChange" src="img.jpg"/>
+    <div style="height :1000px"></div>
+    
+
+<script>
+    
+     window.addEventListener('scroll', function() {
+        const img = document.getElementById('widthChange');
+        const imgPosition = img.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight;
+
+        if(imgPosition< screenPosition) {
+                img.style.width = "1300px";
+        }else if(imgPosition == screenPosition){
+            img.style.width = "1200px";
+        }else if(imgPosition>screenPosition){
+            img.style.width = "1000px";
+        }
+
+        if(img.offsetTop> 300)  img.style.width = "1300px";
+       
+      
+    });
+</script>
+</body>
+</html>
